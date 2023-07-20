@@ -8,6 +8,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
+import 'getapi/drop_down_api.dart';
+
 class HomScreen extends StatefulWidget {
   const HomScreen({Key? key}) : super(key: key);
 
@@ -63,7 +65,24 @@ class _HomScreenState extends State<HomScreen> {
                 subtitle: Text('Integration of post apis with example and with different scenario.'),
                 trailing: Icon(Icons.arrow_forward),
               ),
+            ),
+            GestureDetector(
+              onTap: (){
+
+                Navigator.push(context, MaterialPageRoute(builder: (context) => DropDownApi()));
+
+              },
+              child: const ListTile(
+                leading: CircleAvatar(
+                  radius: 25,
+                  child: Text('D'),
+                ),
+                title: Text('Drop Down'),
+                subtitle: Text('Loading data from api into dropdown'),
+                trailing: Icon(Icons.arrow_forward),
+              ),
             )
+
           ],
         ),
       ),
